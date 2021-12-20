@@ -1,0 +1,10 @@
+url: https://api.github.com
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
