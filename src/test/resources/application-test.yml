@@ -1,0 +1,6 @@
+client:
+  github:
+    url: localhost:${wiremock.server.port:default}/github
+
+server:
+  port : 8080

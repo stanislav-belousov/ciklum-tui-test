@@ -1,0 +1,16 @@
+[
+  {
+    "name": "test",
+    "commit": {
+      "sha": "cff9eb47dd75afd0660fd5bc9947d919f28769e2"
+    },
+    "protected": false
+  },
+  {
+    "name": "master",
+    "commit": {
+      "sha": "8b5eed05838a319931a494e5baf8e36667068662"
+    },
+    "protected": false
+  }
+]
