@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /{userName}:
+    get:
+      tags:
+      - git-hub-repositories-controller
+      summary: Get a repository information by username
+      parameters:
+      - name: userName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "406":
+          description: Not Acceptable
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ExceptionResponce'
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ExceptionResponce'
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RepositoryInfo'
+components:
+  schemas:
+    ExceptionResponce:
+      type: object
+      properties:
+        status:
+          type: integer
+        Message:
+          type: string
+    BranchInfo:
+      type: object
+      properties:
+        name:
+          type: string
+        lastCommitSha:
+          type: string
+    RepositoryInfo:
+      type: object
+      properties:
+        repositoryName:
+          type: string
+        ownerLogin:
+          type: string
+        branches:
+          type: array
+          items:
+            $ref: '#/components/schemas/BranchInfo'
